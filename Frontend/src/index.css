@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 45% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 45% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 45% 11%;
+    --primary: 34 44% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 36 33% 96%;
+    --secondary-foreground: 20 45% 15%;
+    --muted: 36 25% 95%;
+    --muted-foreground: 24 15% 45%;
+    --accent: 35 55% 92%;
+    --accent-foreground: 34 44% 35%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 36 20% 90%;
+    --input: 36 20% 88%;
+    --ring: 34 44% 50%;
+    --radius: 0.75rem;
+
+    --brand-gold: #b5874a;
+    --brand-gold-light: #d8aa6b;
+    --brand-gold-dark: #8c6126;
+    --brand-dark: #2b160f;
+    --brand-dark-soft: #42261b;
+    --brand-cream: #fdfbf7;
+    --brand-cream-warm: #f7f2ea;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #2b160f;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif-title {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Enforce pointer cursor on all clickable elements */
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="checkbox"],
+input[type="radio"],
+select,
+a,
+label[for],
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Hide side scrollbar for clean aesthetic */
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Ultra Smooth 60fps Hardware-Accelerated Marquee */
+@keyframes marquee-smooth {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-smooth {
+  display: flex;
+  width: max-content;
+  animation: marquee-smooth 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-smooth:hover {
+  animation-play-state: paused;
+}
+
+
